@@ -3,6 +3,11 @@
   "private": false,
   "version": "0.0.1",
   "type": "module",
+  "description": "A react hook for use shadow dom",
+  "author": "mysteryven",
+  "repository": {
+    "url": "https://github.com/mysteryven/react-use-shadow"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

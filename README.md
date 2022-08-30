@@ -1,5 +1,7 @@
 # useShadow 
 
+[![npm version](https://badgen.net/npm/v/use-shadow-dom)](https://npm.im/use-shadowm-dom) [![npm downloads](https://badgen.net/npm/dm/use-shadow-dom)](https://npm.im/use-shadow-dom)
+
 ## Install
 
 ```bash
