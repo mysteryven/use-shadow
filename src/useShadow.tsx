@@ -2,7 +2,7 @@ import React, { ReactNode, useEffect, useRef, useState, DependencyList } from "r
 import { render, createPortal } from 'react-dom'
 
 interface Options {
-    shadowRootInit?: ShadowRootInit
+    shadowRootInit?: ShadowRootInit,
 }
 
 const DEFAULT_OPTIONS = {
@@ -18,7 +18,7 @@ function ensureDefaultProps(options: Options) {
     }
 }
 
-export default function useShadow<P extends HTMLElement>(Component: ReactNode, deps: DependencyList = [], opts: Options = {}) {
+export default function useShadow(Component: ReactNode, deps: DependencyList = [], opts: Options = {}) {
     const [hasInitialized, setInitialized] = useState(false)
     const parentRef = useRef<HTMLDivElement>(null)
     const [shadowPortal, setShadowPortal] = useState<React.ReactPortal>()
