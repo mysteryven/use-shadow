@@ -1,8 +1,13 @@
 {
   "name": "use-shadow-dom",
   "private": false,
-  "version": "0.0.1",
+  "version": "0.0.0",
   "type": "module",
+  "files": ["./dist"],
+  "exports": {
+    "import": "./dist/index.js",
+    "require": "./dist/umd.cjs"
+  },
   "description": "A react hook for use shadow dom",
   "author": "mysteryven",
   "repository": {
