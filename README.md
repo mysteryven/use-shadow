@@ -5,7 +5,7 @@
 ## Install
 
 ```bash
-pnpm i use-shadow-dom
+npm i use-shadow-dom
 ```
 
 ## Import
@@ -34,10 +34,10 @@ function MyComponent() {
 }
 ```
 
-Maybe you want to pass some props(eg. your custom css) to your component from `App`, you can tell `useShadow` your dependencies by pass `dependencyList` as second params:
+If you pass some props(eg. your custom css) to your component without do anything, the component will not rerender. The component just like be memorized. you can tell `useShadow` your dependencies by pass `dependencyList` as second params:
 
 ```ts
- const element = useShadow(<MyComponent count={count} />, [count])
+const element = useShadow(<MyComponent count={count} />, [count])
 ```
 
 When `count` changed, `useShadow` will return a new element. 
