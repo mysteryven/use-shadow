@@ -1,8 +1,8 @@
 import { describe, it, expect } from "vitest";
-import sum from '../src/index'
+import useShadow from '../src/index' 
 
-describe('sum', () => {
-    it('should get right ans', () => {
-        expect(sum(1, 2)).toBe(3)
+describe('useShadow', () => {
+    it('should defined', () => {
+        expect(useShadow).toBeDefined()
     })
 })

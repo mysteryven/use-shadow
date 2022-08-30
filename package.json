@@ -1,7 +1,7 @@
 {
-  "name": "ts-react-lib-vite-starter",
-  "private": true,
-  "version": "0.0.0",
+  "name": "use-shadow-dom",
+  "private": false,
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
