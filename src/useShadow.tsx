@@ -23,7 +23,6 @@ export default function useShadow(Component: ReactNode, deps: DependencyList = [
     const parentRef = useRef<HTMLDivElement>(null)
     const [shadowPortal, setShadowPortal] = useState<React.ReactPortal>()
     const [shadowRoot, setShadowRoot] = useState<ShadowRoot>()
-
     const ensuredOpts = ensureDefaultProps(opts)
 
     useEffect(() => {
