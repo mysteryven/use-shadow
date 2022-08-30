@@ -1,13 +1,26 @@
-# ts-react-lib-vite-starter
+# useShadow 
 
-## Using this template
+## Install
 
-Change directory `packages/ts-react-lib` with your own lib name
-Search `ts-react-lib` and replace it with your custom package name.
-If you perfer downloading this template without `.git` folder, you can use degit:
+```
 
-```bash
-npm i degit -g
+```
 
-degit https://github.com/mysteryven/ts-react-lib-vite-starter.git
+## How to use
+
+```ts
+function App() {
+  // this element will be rendered in shadow dom.
+  const element = useShadow(<MyComponent />)
+
+  return (
+    <div className="App">
+      {element}
+    </div>
+  )
+}
+
+function MyComponent() {
+  return <div>Hello world</div>
+}
 ```

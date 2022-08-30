@@ -15,6 +15,10 @@
   -webkit-text-size-adjust: 100%;
 }
 
+div {
+  color: red
+}
+
 a {
   font-weight: 500;
   color: #646cff;
