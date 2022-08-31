@@ -1,5 +1,5 @@
 {
-  "name": "use-shadow-dom-react",
+  "name": "use-shadow-dom",
   "private": false,
   "version": "0.0.0",
   "type": "module",
@@ -16,6 +16,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "preview": "vite preview ",
     "example": "vite example",
     "prepublish": "pnpm build",
     "test": "pnpm vitest"

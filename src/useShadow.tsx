@@ -1,11 +1,15 @@
-import React, { ReactNode, useEffect, useRef, useState, DependencyList } from "react";
+import React, { ReactNode, useEffect, useRef, useState, DependencyList, useMemo } from "react";
 import { render, createPortal } from 'react-dom'
 
 interface Options {
+    styleContent?: string;
+    styleSheets?: string[];
     shadowRootInit?: ShadowRootInit,
 }
 
 const DEFAULT_OPTIONS = {
+    styleContent: '',
+    styleSheets: [],
     shadowRootInit: {
         mode: 'open'
     }
@@ -24,6 +28,16 @@ export default function useShadow(Component: ReactNode, deps: DependencyList = [
     const [shadowPortal, setShadowPortal] = useState<React.ReactPortal>()
     const [shadowRoot, setShadowRoot] = useState<ShadowRoot>()
     const ensuredOpts = ensureDefaultProps(opts)
+    const allStyleContent = useMemo(() => {
+        const {styleSheets, styleContent} = ensuredOpts
+        return `
+            ${ensuredOpts.styleSheets.map( s => `@import url(${s})`).join(';')} 
+            ${styleContent}
+        `
+    }, [
+        ensuredOpts.styleContent,
+        ensuredOpts.styleSheets.join(',')
+    ])
 
     useEffect(() => {
         if (
@@ -44,8 +58,13 @@ export default function useShadow(Component: ReactNode, deps: DependencyList = [
         }
     }, [shadowRoot, ...deps])
 
+    const hasCustomStyle = ensuredOpts.styleContent || ensuredOpts.styleSheets.length > 0
+
     return (
         <div ref={parentRef}>
+            {
+                hasCustomStyle && <style>{allStyleContent}</style>
+            }
             {shadowPortal}
         </div>
     )

@@ -48,12 +48,14 @@ When `count` changed, `useShadow` will return a new element.
 | Value     |    Type | Default  | Description |
 | -------- | --------| ----- | ----- |
 | Component      |    ReactNode | -  | The component you want to attach to shadow dom. 
-| deps | DependencyList | `[]` | The dependencies that control component updates
-| opts | Options | - | please see Options API
+| deps | DependencyList | `[]` | The dependencies that control component updates.
+| opts | Options | - |  See Options API below.
 
 
 ## Options API
 
 | Value     |    Type | Default  | Description |
 | -------- | --------| ----- | ----- |
-| shadowRootInit      |    ShadowRootInit | `{ mode: 'open' }`  | the params for `attachShadow`
+| `shadowRootInit`      |    `ShadowRootInit` | `{ mode: 'open' }`  | the params for `attachShadow`
+| `styleContent` | `string` | Inline style string in shadow dom |
+| `styleSheets` | `string[]` | Inline static css files in shadow dom, the base url is your root path. 
