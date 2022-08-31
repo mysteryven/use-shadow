@@ -1,7 +1,7 @@
 {
-  "name": "use-shadow-dom-react",
+  "name": "use-shadow-dom",
   "private": false,
-  "version": "1.0.9",
+  "version": "0.0.0",
   "type": "module",
   "files": ["dist"],
   "types": "./dist/index.d.ts",
