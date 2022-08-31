@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "files": ["dist"],
+  "keywords": ["react", "shadow dom", "react hooks", "custom hooks"],
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
