@@ -31,7 +31,7 @@ export default function useShadow(Component: ReactNode, deps: DependencyList = [
     const allStyleContent = useMemo(() => {
         const {styleSheets, styleContent} = ensuredOpts
         return `
-            ${ensuredOpts.styleSheets.map( s => `@import url(${s})`).join(';')} 
+            ${styleSheets.map( s => `@import url(${s})`).join(';')} 
             ${styleContent}
         `
     }, [
