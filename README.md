@@ -2,6 +2,10 @@
 
 [![npm version](https://badgen.net/npm/v/use-shadow-dom)](https://npm.im/use-shadow-dom) [![npm downloads](https://badgen.net/npm/dm/use-shadow-dom)](https://npm.im/use-shadow-dom)
 
+## Preview
+
+[online demo](https://stackblitz.com/edit/vitejs-vite-hvnnfc?file=src/App.tsx)
+
 ## Install
 
 ```bash
