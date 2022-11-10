@@ -29,9 +29,9 @@ export default function useShadow(Component: ReactNode, deps: DependencyList = [
     const [shadowRoot, setShadowRoot] = useState<ShadowRoot>()
     const ensuredOpts = ensureDefaultProps(opts)
     const allStyleContent = useMemo(() => {
-        const {styleSheets, styleContent} = ensuredOpts
+        const { styleSheets, styleContent } = ensuredOpts
         return `
-            ${styleSheets.map( s => `@import url(${s})`).join(';')} 
+            ${styleSheets.map(s => `@import url(${s})`).join(';')};
             ${styleContent}
         `
     }, [
@@ -54,7 +54,15 @@ export default function useShadow(Component: ReactNode, deps: DependencyList = [
 
     useEffect(() => {
         if (shadowRoot) {
-            setShadowPortal(createPortal(Component, shadowRoot))
+            const withStyleComponent = (
+                <>
+                    {Component}
+                    {
+                        hasCustomStyle && <style>{allStyleContent}</style>
+                    }
+                </>
+            )
+            setShadowPortal(createPortal(withStyleComponent, shadowRoot))
         }
     }, [shadowRoot, ...deps])
 
@@ -62,9 +70,6 @@ export default function useShadow(Component: ReactNode, deps: DependencyList = [
 
     return (
         <div ref={parentRef}>
-            {
-                hasCustomStyle && <style>{allStyleContent}</style>
-            }
             {shadowPortal}
         </div>
     )

@@ -1,3 +1,6 @@
-.my-self {
+.blue {
     color: blue;
+    font-size: 24px;
+    margin-top: 20px;
+    font-weight: bolder;
 }

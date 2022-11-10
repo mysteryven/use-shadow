@@ -1,8 +1,7 @@
 import React, { useRef, useState } from 'react'
-import reactLogo from './assets/react.svg'
 import useShadow from '../../src/index'
 import './App.css'
-import innerCSS from './inner.css'
+import innerCSS from './inner.css?raw'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -13,18 +12,21 @@ function App() {
 
   return (
     <div className="App">
-      <button className="my-self" onClick={() => setCount(count => count + 1)}>Add</button>
+      <pre>
+        <code>
+          {`.blue { color: blue; margin-top: 20px }`}
+        </code>
+      </pre>
+      <button className="blue" onClick={() => setCount(count => count + 1)}>button.blue(outer)</button>
       {element}
     </div>
   )
 }
 
 function MyComponent(props: { count: number }) {
-  function handleClick() {
-    console.log(props.count)
-  }
 
-  return <div onClick={handleClick}>{props.count}</div>
+
+  return <div className='blue'>div.blue-{props.count}(in shadow dom)</div>
 }
 
 export default App

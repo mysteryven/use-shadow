@@ -3,8 +3,15 @@
   "private": false,
   "version": "0.0.0",
   "type": "module",
-  "files": ["dist"],
-  "keywords": ["react", "shadow dom", "react hooks", "custom hooks"],
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "react",
+    "shadow dom",
+    "react hooks",
+    "custom hooks"
+  ],
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
@@ -17,10 +24,9 @@
     "url": "https://github.com/mysteryven/react-use-shadow"
   },
   "scripts": {
-    "dev": "vite",
+    "dev": "vite example",
     "build": "tsc && vite build",
-    "preview": "vite preview ",
-    "example": "vite example",
+    "preview": "vite preview",
     "prepublish": "pnpm build",
     "test": "pnpm vitest"
   },
