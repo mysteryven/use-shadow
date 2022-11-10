@@ -56,10 +56,10 @@ export default function useShadow(Component: ReactNode, deps: DependencyList = [
         if (shadowRoot) {
             const withStyleComponent = (
                 <>
-                    {Component}
                     {
                         hasCustomStyle && <style>{allStyleContent}</style>
                     }
+                    {Component}
                 </>
             )
             setShadowPortal(createPortal(withStyleComponent, shadowRoot))
