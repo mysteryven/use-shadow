@@ -38,7 +38,16 @@ function MyComponent() {
 }
 ```
 
-If you pass some props(eg. your custom css) to your component without do anything, the component will not rerender. The component just like be memorized. you can tell `useShadow` your dependencies by pass `dependencyList` as second params:
+If you pass some props(eg. your custom css) to your component without do anything, the component will not rerender. 
+
+```ts
+const element = useShadow(<MyComponent count={count} />, [], {
+  styleContent: '...' // element will not rerender even though count changed.
+})
+
+```
+
+The component just like be memorized. you can tell `useShadow` your dependencies by pass `dependencyList` as second params:
 
 ```ts
 const element = useShadow(<MyComponent count={count} />, [count])
